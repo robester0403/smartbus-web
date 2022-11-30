@@ -1,94 +1,21 @@
 {
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "plugins": ["react", "lodash", "mui-unused-classes"],
-  "extends": [
-    "eslint:recommended",
-    "airbnb",
-    "plugin:prettier/recommended",
-    "prettier/react",
-    "prettier/babel",
-    "plugin:react-hooks/recommended",
-    "plugin:lodash/recommended"
-  ],
-  "rules": {
-    "no-console": 0,
-    "react/display-name": 0,
-    "react/jsx-filename-extension": 0,
-    "react/forbid-prop-types": 0,
-    "jsx-a11y/no-static-element-interactions": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/no-noninteractive-element-interactions": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "jsx-a11y/label-has-associated-control": 0,
-    "react/no-array-index-key": 0,
-
-    "react/jsx-fragments": 0,
-    "react/destructuring-assignment": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/state-in-constructor": 0,
-    "react/no-access-state-in-setstate": 0,
-    "react/static-property-placement": 0,
-    "react/sort-comp": 0,
-    "react/button-has-type": 0,
-    "react/no-unescaped-entities": 0,
-
-    // TODO: These should absolutely be enabled
-    "import/no-cycle": 0,
-    "max-classes-per-file": 0,
-
-    // Added for async componentDidMount()
-    // See: https://github.com/yannickcr/eslint-plugin-react/issues/1110
-    "react/no-did-mount-set-state": 0,
-
-    // Added to allow non-default export from utility files that don't yet have multiple exports
-    "import/prefer-default-export": 0,
-
-    // Copied from eslint-config-airbnb-base/rules/style.js, with line length bumped up to 120
-    "max-len": [
-      "error",
-      120,
-      2,
-      {
-        "ignoreUrls": true,
-        "ignoreComments": false,
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true
-      }
-    ],
-
-    // Allow reassigning properties of a function argument for use within e.g. immer's produce method
-    "no-param-reassign": ["error", { "props": false }],
-
-    // Might want to remove this later on and refactor all the code to follow the lodash eslint rules instead
-    "lodash/prefer-lodash-method": 0,
-    "lodash/prop-shorthand": 0,
-    "lodash/prefer-lodash-typecheck": 0,
-    "lodash/prefer-noop": 0,
-    "lodash/path-style": 0,
-    "lodash/prefer-constant": 0,
-    "lodash/prefer-flat-map": 0,
-    "lodash/prefer-is-nil": 0,
-    "lodash/collection-ordering": 0,
-    "lodash/matches-prop-shorthand": 0,
-    "lodash/matches-shorthand": 0,
-    "lodash/prefer-immutable-method": 0,
-    "lodash/prefer-matches": 0,
-    "lodash/prefer-get": 0,
-    "lodash/prefer-compact": 0,
-    "mui-unused-classes/unused-classes": 1
-  },
   "env": {
     "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
-  }
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {}
 }
