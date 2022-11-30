@@ -58,7 +58,12 @@ const Login = () => {
               helperText={formik.touched.password && formik.errors.password}
               sx={{ marginBottom: "32px" }}
             />
-            <Button variant="contained" color="primary" type="submit">
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              disabled={!!formik.errors}
+            >
               Sign In
             </Button>
           </Grid>
