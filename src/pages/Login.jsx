@@ -1,7 +1,7 @@
 import { Button, Grid, TextField } from "@mui/material";
 import React from "react";
-import styled, { keyframes } from "styled-components";
 import loginImg from "../assets/images/loginImage.jpg";
+import { LayoutContainer, Logo, TempPhoneContainer } from "../styles/styled";
 
 const Login = () => {
   return (
@@ -27,7 +27,9 @@ const Login = () => {
               label="password"
               sx={{ marginBottom: "32px" }}
             />
-            <Button>Sign In</Button>
+            <Button variant="contained" color="primary" type="submit">
+              Sign In
+            </Button>
           </Grid>
         </form>
       </LayoutContainer>
@@ -36,31 +38,3 @@ const Login = () => {
 };
 
 export default Login;
-
-const TempPhoneContainer = styled.section`
-  max-width: 480px;
-  margin: 0 auto;
-`;
-
-const LayoutContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-`;
-
-const rockingBus = keyframes`
-  0%, 100% { transform: rotate(-.15deg); }
-  15% { transform: rotate(.20deg); }
-  20% {transform:scale(.9975);}
-  25% { transform: rotate(-.20deg); }
-  90% { transform: rotate(.15deg); }
-  80% {transform:scale(.9975);}
-  `;
-
-const Logo = styled.img`
-  width: 100%;
-  animation-name: ${rockingBus};
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-`;
