@@ -3,12 +3,13 @@ import React from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import styled from "styled-components";
+import loginImg from "../assets/images/login.png";
 
 const Login = () => {
   return (
     <TempPhoneContainer>
       <LayoutContainer>
-        <div>image</div>
+        <img src={loginImg} alt="login" />
         <div>login</div>
         <div>password</div>
         <Button>Sign In</Button>
