@@ -1,5 +1,8 @@
+import React from "react";
 import { CssBaseline } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Route, Routes } from "react-router";
+import Login from "./pages/Login";
 
 function App() {
   document.title = "Smartbus";
@@ -8,7 +11,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <>
         <CssBaseline />
-        <div className="App">routes here</div>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </>
     </QueryClientProvider>
   );
