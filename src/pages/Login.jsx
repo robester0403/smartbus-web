@@ -13,8 +13,14 @@ const validationsSchema = yup.object({
   password: yup.string("Enter your password").required("Password is required"),
 });
 
+const defaultValues = {
+  login: "",
+  password: "",
+};
+
 const Login = () => {
   const formik = useFormik({
+    initialValues: defaultValues,
     validationSchema: validationsSchema,
     onSubmit: async (formValues) => {
       console.log({ ...formValues });
