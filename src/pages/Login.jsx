@@ -1,9 +1,10 @@
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import loginImg from "../assets/images/loginImage.jpg";
-import { LayoutContainer, Logo, TempPhoneContainer } from "../styles/styled";
+import { Logo } from "../styles/styled";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const validationsSchema = yup.object({
   login: yup
@@ -27,44 +28,40 @@ const Login = () => {
     },
   });
   return (
-    <TempPhoneContainer>
-      <LayoutContainer>
-        <Logo src={loginImg} alt="login" />
-        <form onSubmit={formik.handleSubmit}>
-          <Grid
-            container
-            alignItems="center"
-            justify="center"
-            direction="column"
-          >
-            <TextField
-              id="login-input"
-              name="login"
-              label="login"
-              value={formik.values.login}
-              onChange={formik.handleChange}
-              error={formik.touched.login && Boolean(formik.touched.login)}
-              helperText={formik.touched.login && formik.errors.login}
-              sx={{ marginBottom: "32px" }}
-            />
-            <TextField
-              id="password-input"
-              name="password"
-              label="password"
-              type="password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              error={formik.touched.password && Boolean(formik.errors.password)}
-              helperText={formik.touched.password && formik.errors.password}
-              sx={{ marginBottom: "32px" }}
-            />
-            <Button variant="contained" color="primary" type="submit">
-              Sign In
-            </Button>
-          </Grid>
-        </form>
-      </LayoutContainer>
-    </TempPhoneContainer>
+    <>
+      <Logo src={loginImg} alt="login" />
+      <form onSubmit={formik.handleSubmit}>
+        <Grid container alignItems="center" justify="center" direction="column">
+          <TextField
+            id="login-input"
+            name="login"
+            label="login"
+            value={formik.values.login}
+            onChange={formik.handleChange}
+            error={formik.touched.login && Boolean(formik.touched.login)}
+            helperText={formik.touched.login && formik.errors.login}
+            sx={{ marginBottom: "32px" }}
+          />
+          <TextField
+            id="password-input"
+            name="password"
+            label="password"
+            type="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+            sx={{ marginBottom: "32px" }}
+          />
+          <Button variant="contained" color="primary" type="submit">
+            Sign In
+          </Button>
+          <Typography variant="body2" sx={{ marginTop: "16px" }}>
+            <Link to="/signup">Do not have an account? Signup here.</Link>
+          </Typography>
+        </Grid>
+      </form>
+    </>
   );
 };
 
