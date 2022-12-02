@@ -3,6 +3,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import { StyledTextField } from "../styles/styled";
 
 const validationSchema = yup.object({
   firstName: yup
@@ -50,7 +51,7 @@ const Signup = () => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container alignItems="center" justify="center" direction="column">
-        <TextField
+        <StyledTextField
           id="firstName-input"
           name="firstName"
           label="First Name"
@@ -58,9 +59,8 @@ const Signup = () => {
           onChange={formik.handleChange}
           error={formik.touched.firstName && Boolean(formik.touched.firstName)}
           helperText={formik.touched.firstName && formik.errors.firstName}
-          sx={{ marginBottom: "32px" }}
         />
-        <TextField
+        <StyledTextField
           id="lastName-input"
           name="lastName"
           label="Last Name"
@@ -68,9 +68,8 @@ const Signup = () => {
           onChange={formik.handleChange}
           error={formik.touched.lastName && Boolean(formik.touched.lastName)}
           helperText={formik.touched.lastName && formik.errors.lastName}
-          sx={{ marginBottom: "32px" }}
         />
-        <TextField
+        <StyledTextField
           id="userName-input"
           name="userName"
           label="Username"
@@ -78,9 +77,8 @@ const Signup = () => {
           onChange={formik.handleChange}
           error={formik.touched.userName && Boolean(formik.touched.userName)}
           helperText={formik.touched.userName && formik.errors.userName}
-          sx={{ marginBottom: "32px" }}
         />
-        <TextField
+        <StyledTextField
           id="email-input"
           name="email"
           label="Email"
@@ -88,9 +86,8 @@ const Signup = () => {
           onChange={formik.handleChange}
           error={formik.touched.email && Boolean(formik.touched.email)}
           helperText={formik.touched.email && formik.errors.email}
-          sx={{ marginBottom: "32px" }}
         />
-        <TextField
+        <StyledTextField
           id="password-input"
           name="password"
           label="Password"
@@ -99,9 +96,8 @@ const Signup = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
-          sx={{ marginBottom: "32px" }}
         />
-        <TextField
+        <StyledTextField
           id="confirmPassword-input"
           name="confirmPassword"
           label="Confirm Password"
@@ -114,7 +110,6 @@ const Signup = () => {
           helperText={
             formik.touched.confirmPassword && formik.errors.confirmPassword
           }
-          sx={{ marginBottom: "32px" }}
         />
         <Button variant="contained" color="primary" type="submit">
           Sign In

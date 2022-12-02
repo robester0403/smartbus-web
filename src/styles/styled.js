@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import styled, { keyframes } from "styled-components";
 
 export const TempPhoneContainer = styled.section`
@@ -27,3 +28,7 @@ export const Logo = styled.img`
   animation-duration: 2s;
   animation-iteration-count: infinite;
 `;
+
+export const StyledTextField = styled(TextField)({
+  marginBottom: "32px",
+});
