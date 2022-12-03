@@ -29,6 +29,8 @@ export const Logo = styled.img`
   animation-iteration-count: infinite;
 `;
 
-export const StyledTextField = styled(TextField)({
-  marginBottom: "32px",
-});
+export const StyledInputTextField = styled(TextField)`
+  && {
+    margin-bottom: 32px;
+  }
+`;

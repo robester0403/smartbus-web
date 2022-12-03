@@ -1,9 +1,9 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { StyledTextField } from "../styles/styled";
+import { StyledInputTextField } from "../styles/styled";
 
 const validationSchema = yup.object({
   firstName: yup
@@ -51,7 +51,7 @@ const Signup = () => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container alignItems="center" justify="center" direction="column">
-        <StyledTextField
+        <StyledInputTextField
           id="firstName-input"
           name="firstName"
           label="First Name"
@@ -60,7 +60,7 @@ const Signup = () => {
           error={formik.touched.firstName && Boolean(formik.touched.firstName)}
           helperText={formik.touched.firstName && formik.errors.firstName}
         />
-        <StyledTextField
+        <StyledInputTextField
           id="lastName-input"
           name="lastName"
           label="Last Name"
@@ -69,7 +69,7 @@ const Signup = () => {
           error={formik.touched.lastName && Boolean(formik.touched.lastName)}
           helperText={formik.touched.lastName && formik.errors.lastName}
         />
-        <StyledTextField
+        <StyledInputTextField
           id="userName-input"
           name="userName"
           label="Username"
@@ -78,7 +78,7 @@ const Signup = () => {
           error={formik.touched.userName && Boolean(formik.touched.userName)}
           helperText={formik.touched.userName && formik.errors.userName}
         />
-        <StyledTextField
+        <StyledInputTextField
           id="email-input"
           name="email"
           label="Email"
@@ -87,7 +87,7 @@ const Signup = () => {
           error={formik.touched.email && Boolean(formik.touched.email)}
           helperText={formik.touched.email && formik.errors.email}
         />
-        <StyledTextField
+        <StyledInputTextField
           id="password-input"
           name="password"
           label="Password"
@@ -97,7 +97,7 @@ const Signup = () => {
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
         />
-        <StyledTextField
+        <StyledInputTextField
           id="confirmPassword-input"
           name="confirmPassword"
           label="Confirm Password"
