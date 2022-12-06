@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import styled, { keyframes } from "styled-components";
 
 export const TempPhoneContainer = styled.section`
@@ -26,4 +27,10 @@ export const Logo = styled.img`
   animation-name: ${rockingBusAnimation};
   animation-duration: 2s;
   animation-iteration-count: infinite;
+`;
+
+export const StyledInputTextField = styled(TextField)`
+  && {
+    margin-bottom: 32px;
+  }
 `;
