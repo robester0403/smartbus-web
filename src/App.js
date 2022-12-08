@@ -2,10 +2,10 @@ import React from "react";
 import { CssBaseline } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Route, Routes } from "react-router";
-import Login from "./pages/Login";
-import NavHome from "./pages/NavHome";
-import { LayoutContainer, TempPhoneContainer } from "./styles/styled";
-import Signup from "./pages/Signup";
+import NavHome from "./pages/NavHome/NavHome";
+import Signup from "./pages/Signup/Signup";
+import Login from "./pages/Login/Login";
+import { LayoutContainer, TempPhoneContainer } from "./AppStyle";
 
 function App() {
   document.title = "Smartbus";
