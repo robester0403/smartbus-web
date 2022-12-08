@@ -1,10 +1,10 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
-import loginImg from "../assets/images/loginImage.jpg";
-import { Logo } from "../styles/styled";
+import loginImg from "../../assets/images/loginImage.jpg";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import { Logo, StyledInputTextField } from "./LoginStyle";
 
 const validationsSchema = yup.object({
   login: yup
@@ -32,7 +32,7 @@ const Login = () => {
       <Logo src={loginImg} alt="login" />
       <form onSubmit={formik.handleSubmit}>
         <Grid container alignItems="center" justify="center" direction="column">
-          <TextField
+          <StyledInputTextField
             id="login-input"
             name="login"
             label="login"
@@ -40,9 +40,8 @@ const Login = () => {
             onChange={formik.handleChange}
             error={formik.touched.login && Boolean(formik.touched.login)}
             helperText={formik.touched.login && formik.errors.login}
-            sx={{ marginBottom: "32px" }}
           />
-          <TextField
+          <StyledInputTextField
             id="password-input"
             name="password"
             label="password"
@@ -51,7 +50,6 @@ const Login = () => {
             onChange={formik.handleChange}
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
-            sx={{ marginBottom: "32px" }}
           />
           <Button variant="contained" color="primary" type="submit">
             Sign In

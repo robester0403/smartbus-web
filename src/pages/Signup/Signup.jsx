@@ -3,7 +3,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { StyledInputTextField } from "../styles/styled";
+import { StyledInputTextField } from "../../styles/styled";
 
 const validationSchema = yup.object({
   firstName: yup
