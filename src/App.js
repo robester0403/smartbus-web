@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router";
 import NavHome from "./pages/NavHome/NavHome";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
+import Map from "./pages/Map/Map";
 import { LayoutContainer, TempPhoneContainer } from "./AppStyle";
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
           <>
             <CssBaseline />
             <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/NavHome" element={<NavHome />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/NavHome' element={<NavHome />} />
+              <Route path='/Map' element={<Map />} />
             </Routes>
           </>
         </QueryClientProvider>
