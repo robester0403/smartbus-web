@@ -9,16 +9,6 @@ const NavHome = () => {
   useEffect(() => {
     setUser(data);
   }, []);
-  return (
-    <div>
-      {user?.userIsDriver && (
-        <div>
-          <div>Hi driver</div>
-        </div>
-      )}
-
-      {!user?.userIsDriver && <div>Hi Rider</div>}
-    </div>
-  );
+  return <div></div>;
 };
 export default NavHome;
