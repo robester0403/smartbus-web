@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router";
 import NavHome from "./pages/NavHome/NavHome";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
-import Map from "./pages/Map/Map";
+import Map from "./components/Map/Map";
 import { LayoutContainer, TempPhoneContainer } from "./AppStyle";
 
 function App() {

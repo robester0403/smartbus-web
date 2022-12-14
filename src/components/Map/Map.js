@@ -5,14 +5,14 @@ import {
   MarkerF,
 } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
-//import { YOUR_API_KEY } from "../../secret";
 
 const containerStyle = {
   width: "100vw",
   height: "100vh",
 };
 
-const YOUR_API_KEY = "AIzaSyD0vHr39NSVFegO4ri_S_9CWSxqdk2Cogk";
+const YOUR_API_KEY = "";
+// Enter your api key here, or ask for our api keys
 
 export default function Map() {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -21,7 +21,6 @@ export default function Map() {
   const success = (position) => {
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
-    console.log(lat, lng);
     setCurrentLocation({ lat, lng });
   };
 
