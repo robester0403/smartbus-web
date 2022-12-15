@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import SmartMap from "../../components/SmartMap/SmartMap";
 const data = {
   username: "username",
   userIsDriver: false,
 };
 
-const NavHome = () => {
+const NavHome = (props) => {
   const [user, setUser] = useState({});
   useEffect(() => {
     setUser(data);

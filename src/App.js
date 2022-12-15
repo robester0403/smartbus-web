@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router";
 import NavHome from "./pages/NavHome/NavHome";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
-import Map from "./components/Map/Map";
+import SmartMap from "./components/SmartMap/SmartMap";
 import { LayoutContainer, TempPhoneContainer } from "./AppStyle";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/NavHome' element={<NavHome />} />
-              <Route path='/Map' element={<Map />} />
+              <Route path='/SmartMap' element={<SmartMap />} />
             </Routes>
           </>
         </QueryClientProvider>
