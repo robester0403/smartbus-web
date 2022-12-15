@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SmartMap from "../../components/SmartMap/SmartMap";
 const data = {
   username: "username",
   userIsDriver: false,
@@ -21,7 +20,6 @@ const NavHome = () => {
       {!user?.userIsDriver && (
         <>
           <div>Hi Rider</div>
-          <SmartMap />
         </>
       )}
     </div>

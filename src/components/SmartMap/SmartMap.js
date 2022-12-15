@@ -3,11 +3,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-export const YOUR_API_KEY = process.env.REACT_APP_YOUR_API_KEY;
+const YOUR_API_KEY = process.env.REACT_APP_YOUR_API_KEY;
 
 export default function SmartMap(props) {
   const {
-    googleMapsApiKey,
     zoom,
     center,
     isOpen,
@@ -48,7 +47,6 @@ export const MapContainer = styled.div`
   height: ${(props) => props.containerHeight};
 `;
 SmartMap.defaultProps = {
-  googleMapsApiKey: "process.env.REACT_APP_YOUR_API_KEY",
   zoom: 10,
   center: {
     lat: 42.0898,
@@ -56,12 +54,11 @@ SmartMap.defaultProps = {
   },
   isOpen: true,
   children: null,
-  containerWidth: "100vw",
-  containerHeight: "100vh",
+  containerWidth: "400px",
+  containerHeight: "400px",
 };
 
 SmartMap.propTypes = {
-  googleMapsApiKey: PropTypes.string.isRequired,
   zoom: PropTypes.number,
   center: PropTypes.object,
   isOpen: PropTypes.bool,
