@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { authRequest } from "../../utils/axios";
 const data = {
   username: "username",
   userIsDriver: false,
 };
-const HEARTBEAT_ENDPOINT = "";
+const HEARTBEAT_ENDPOINT = "/heartbeat";
+const HEARTBEAT_SPEED = 2000;
+const USER_DETAIL_ENDPOINT = "/userDetails";
 
 const NavHome = () => {
   const [user, setUser] = useState({});
@@ -16,19 +19,26 @@ const NavHome = () => {
   };
 
   const pingHeartBeat = async () => {
-    const position = await currentPosition();
+    try {
+      const position = await currentPosition();
 
-    const heartBeatData = {
-      userId: 1, // Should be included in the Token
-      userRole: "Driver", // Should be included in the Token
-      timestamp: Date.now(),
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-      speed: 30,
-    };
+      // const response = await authRequest.get(USER_DETAIL_ENDPOINT);
+      // const userRole = response.data.user_role;
 
-    axios.post(HEARTBEAT_ENDPOINT, heartBeatData);
-    // console.log(heartBeatData);
+      const heartBeatData = {
+        userId: 1,
+        userRole: "Driver", //To be replace with userRole variable
+        timestamp: Date.now(),
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        speed: 30,
+      };
+
+      // authRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
+      console.log(heartBeatData);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
@@ -36,7 +46,7 @@ const NavHome = () => {
 
     const heartBeatID = setInterval(() => {
       pingHeartBeat();
-    }, 2000);
+    }, HEARTBEAT_SPEED);
     return () => {
       clearInterval(heartBeatID);
     };
