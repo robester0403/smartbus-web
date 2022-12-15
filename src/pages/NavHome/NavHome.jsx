@@ -5,7 +5,7 @@ const data = {
   userIsDriver: false,
 };
 
-const NavHome = (props) => {
+const NavHome = () => {
   const [user, setUser] = useState({});
   useEffect(() => {
     setUser(data);
