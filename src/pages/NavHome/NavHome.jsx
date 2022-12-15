@@ -18,7 +18,12 @@ const NavHome = () => {
         </div>
       )}
 
-      {!user?.userIsDriver && <div>Hi Rider</div>}
+      {!user?.userIsDriver && (
+        <>
+          <div>Hi Rider</div>
+          <SmartMap />
+        </>
+      )}
     </div>
   );
 };

@@ -48,6 +48,7 @@ export const MapContainer = styled.div`
   height: ${(props) => props.containerHeight};
 `;
 SmartMap.defaultProps = {
+  googleMapsApiKey: "process.env.REACT_APP_YOUR_API_KEY",
   zoom: 10,
   center: {
     lat: 42.0898,
