@@ -34,6 +34,7 @@ function App() {
                 <Route path="/routedetails" element={<RouteDetails />} />
                 <Route path="/setuppage  " element={<SetupPage />} />
                 <Route path="/errorpage" element={<ErrorPage />} />
+                <Route path="*" element={<ErrorPage />} />
               </Routes>
             </>
           </QueryClientProvider>
