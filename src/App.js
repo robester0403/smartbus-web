@@ -22,19 +22,19 @@ function App() {
           <QueryClientProvider client={queryClient}>
             <Helmet>
               <title>Learning React Helmet!</title>
-              <meta name="SmartBus" content="The only bus app you will need." />
+              <meta name='SmartBus' content='The only bus app you will need.' />
             </Helmet>
             <>
               <CssBaseline />
               <Routes>
-                <Route path="/" element={<IntroPage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/navhome" element={<NavHome />} />
-                <Route path="/routedetails" element={<RouteDetails />} />
-                <Route path="/setuppage  " element={<SetupPage />} />
-                <Route path="/errorpage" element={<ErrorPage />} />
-                <Route path="*" element={<ErrorPage />} />
+                <Route path='/' element={<IntroPage />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
+                <Route path='/navhome' element={<NavHome />} />
+                <Route path='/routedetails' element={<RouteDetails />} />
+                <Route path='/setuppage  ' element={<SetupPage />} />
+                <Route path='/errorpage' element={<ErrorPage />} />
+                <Route path='*' element={<ErrorPage />} />
               </Routes>
             </>
           </QueryClientProvider>
