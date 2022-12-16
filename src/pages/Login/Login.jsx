@@ -24,7 +24,7 @@ const Login = () => {
     initialValues: defaultValues,
     validationSchema: validationsSchema,
     onSubmit: async (formValues) => {
-      console.log({ ...formValues });
+      alert({ ...formValues });
     },
   });
   return (
