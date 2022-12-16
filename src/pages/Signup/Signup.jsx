@@ -45,7 +45,7 @@ const Signup = () => {
     initialValues: defaultValues,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      alert({ ...values });
     },
   });
   return (
