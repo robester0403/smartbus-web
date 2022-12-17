@@ -4,7 +4,7 @@ import { authRequest } from "../../utils/axios";
 
 const HEARTBEAT_ENDPOINT = "/heartbeat";
 const HEARTBEAT_SPEED = 2000;
-const USER_DETAIL_ENDPOINT = "/userDetails";
+// const USER_DETAIL_ENDPOINT = "/userDetails";
 
 const RouteDetails = () => {
   const currentPosition = () => {
