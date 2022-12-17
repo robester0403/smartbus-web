@@ -24,7 +24,7 @@ const RouteDetails = () => {
       const heartBeatData = {
         userId: 1, //To be replaced with userId
         userRole: "driver", //To be replaced with userRole variable
-        timestamp: Date.now(),
+        timestamp: Date.now().toString(),
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
         speed: position.coords.speed,
