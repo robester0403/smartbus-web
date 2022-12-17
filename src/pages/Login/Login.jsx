@@ -29,33 +29,33 @@ const Login = () => {
   });
   return (
     <>
-      <Logo src={loginImg} alt="login" />
+      <Logo src={loginImg} alt='login' />
       <form onSubmit={formik.handleSubmit}>
-        <Grid container alignItems="center" justify="center" direction="column">
+        <Grid container alignItems='center' justify='center' direction='column'>
           <StyledInputTextField
-            id="login-input"
-            name="login"
-            label="login"
+            id='login-input'
+            name='login'
+            label='login'
             value={formik.values.login}
             onChange={formik.handleChange}
             error={formik.touched.login && Boolean(formik.touched.login)}
             helperText={formik.touched.login && formik.errors.login}
           />
           <StyledInputTextField
-            id="password-input"
-            name="password"
-            label="password"
-            type="password"
+            id='password-input'
+            name='password'
+            label='password'
+            type='password'
             value={formik.values.password}
             onChange={formik.handleChange}
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant='contained' color='primary' type='submit'>
             Sign In
           </Button>
-          <Typography variant="body2" sx={{ marginTop: "16px" }}>
-            <Link to="/signup">Do not have an account? Signup here.</Link>
+          <Typography variant='body2' sx={{ marginTop: "16px" }}>
+            <Link to='/signup'>Do not have an account? Signup here.</Link>
           </Typography>
         </Grid>
       </form>
