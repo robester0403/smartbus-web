@@ -5,6 +5,6 @@ export const authRequest = axios.create({
   baseURL: BASE_URL,
   headers: {
     Accept: "application/json",
-    //'Authorization': "TOKEN"
+    //'TODO: Authorization': "TOKEN"
   },
 });

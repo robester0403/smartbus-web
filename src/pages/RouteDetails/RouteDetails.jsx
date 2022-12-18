@@ -4,7 +4,7 @@ import { authRequest } from "../../utils/axios";
 
 const HEARTBEAT_ENDPOINT = "/heartbeat";
 const HEARTBEAT_SPEED = 2000;
-// const USER_DETAIL_ENDPOINT = "/userDetails";
+// TODO: const USER_DETAIL_ENDPOINT = "/userDetails";
 
 const RouteDetails = () => {
   const currentPosition = () => {
@@ -17,22 +17,23 @@ const RouteDetails = () => {
     try {
       const position = await currentPosition();
 
-      // const response = await authRequest.get(USER_DETAIL_ENDPOINT);
-      // const userRole = response.data.user_role;
-      // const userId = userRole === "driver" ? response.data.driver_id : response.data.rider_id
+      // TODO: const response = await authRequest.get(USER_DETAIL_ENDPOINT);
+      const userRole = "driver"; // TODO: replace this with userRole = response.data.user_role;
+      const userId = 1; //TODO: replace this with userRole === "driver" ? response.data.driver_id : response.data.rider_id
 
       const heartBeatData = {
-        userId: 1, //To be replaced with userId
-        userRole: "driver", //To be replaced with userRole variable
+        userId: userId,
+        userRole: userRole,
         timestamp: Math.floor(Date.now() / 1000),
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
         speed: position.coords.speed,
       };
 
-      authRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
+      // authRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
+      console.log(heartBeatData);
     } catch (err) {
-      console.log(err);
+      alert("Please give permission to access your current location");
     }
   };
 
