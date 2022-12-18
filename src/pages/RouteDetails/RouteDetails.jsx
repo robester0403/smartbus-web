@@ -30,8 +30,7 @@ const RouteDetails = () => {
         speed: position.coords.speed,
       };
 
-      // authRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
-      console.log(heartBeatData);
+      authRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
     } catch (err) {
       alert("Please give permission to access your current location");
     }
