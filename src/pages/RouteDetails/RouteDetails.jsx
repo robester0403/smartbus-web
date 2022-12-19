@@ -12,11 +12,12 @@ const RouteDetails = () => {
       const position = await currentPositionData();
       const userRole = "driver";
       const userId = 1;
+      const currentTime = Math.floor(Date.now() / 1000);
 
       const heartBeatData = {
         userId: userId,
         userRole: userRole,
-        timestamp: Math.floor(Date.now() / 1000),
+        timestamp: currentTime,
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
         speed: position.coords.speed,
