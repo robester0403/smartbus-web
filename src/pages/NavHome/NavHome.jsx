@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 const data = {
   username: "username",
   userIsDriver: false,
@@ -6,9 +7,11 @@ const data = {
 
 const NavHome = () => {
   const [user, setUser] = useState({});
+
   useEffect(() => {
     setUser(data);
   }, []);
+
   return (
     <div>
       {user?.userIsDriver && (
