@@ -1,25 +1,17 @@
 import React, { useEffect } from "react";
 import SmartMap from "../../components/SmartMap/SmartMap";
-import { authRequest } from "../../utils/axios";
+import { apiRequest } from "../../utils/axios";
+import { currentPositionData } from "../../utils/currentPositionData";
 
 const HEARTBEAT_ENDPOINT = "/heartbeat";
 const HEARTBEAT_SPEED = 2000;
-// TODO: const USER_DETAIL_ENDPOINT = "/userDetails";
 
 const RouteDetails = () => {
-  const currentPosition = () => {
-    return new Promise((res, rej) => {
-      navigator.geolocation.getCurrentPosition(res, rej);
-    });
-  };
-
   const pingHeartBeat = async () => {
     try {
-      const position = await currentPosition();
-
-      // TODO: const response = await authRequest.get(USER_DETAIL_ENDPOINT);
-      const userRole = "driver"; // TODO: replace this with userRole = response.data.user_role;
-      const userId = 1; //TODO: replace this with userRole === "driver" ? response.data.driver_id : response.data.rider_id
+      const position = await currentPositionData();
+      const userRole = "driver";
+      const userId = 1;
 
       const heartBeatData = {
         userId: userId,
@@ -30,7 +22,7 @@ const RouteDetails = () => {
         speed: position.coords.speed,
       };
 
-      authRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
+      apiRequest.post(HEARTBEAT_ENDPOINT, heartBeatData);
     } catch (err) {
       alert("Please give permission to access your current location");
     }
