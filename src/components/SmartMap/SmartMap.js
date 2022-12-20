@@ -18,16 +18,13 @@ export default function SmartMap(props) {
 
   return (
     <>
-      <MapContainer
-        containerHeight={containerHeight}
-        containerWidth={containerWidth}
-      >
+      <MapContainer>
         {isOpen && (
           <LoadScript googleMapsApiKey={YOUR_API_KEY}>
             <GoogleMap
               mapContainerStyle={{
-                width: "100%",
-                height: "100%",
+                width: `${containerWidth}px`,
+                height: `${containerHeight}px`,
               }}
               {...rest}
               center={center}
@@ -54,8 +51,8 @@ SmartMap.defaultProps = {
   },
   isOpen: true,
   children: null,
-  containerWidth: "400px",
-  containerHeight: "400px",
+  containerWidth: "400",
+  containerHeight: "400",
 };
 
 SmartMap.propTypes = {
