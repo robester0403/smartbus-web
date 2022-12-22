@@ -44,8 +44,8 @@ SmartMap.defaultProps = {
   },
   isOpen: true,
   children: null,
-  containerWidth: "400",
-  containerHeight: "400",
+  containerWidth: "0",
+  containerHeight: "0",
 };
 
 SmartMap.propTypes = {
