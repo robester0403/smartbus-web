@@ -1,7 +1,6 @@
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 const YOUR_API_KEY = process.env.REACT_APP_YOUR_API_KEY;
 
@@ -18,34 +17,25 @@ export default function SmartMap(props) {
 
   return (
     <>
-      <MapContainer
-        containerHeight={containerHeight}
-        containerWidth={containerWidth}
-      >
-        {isOpen && (
-          <LoadScript googleMapsApiKey={YOUR_API_KEY}>
-            <GoogleMap
-              mapContainerStyle={{
-                width: "100%",
-                height: "100%",
-              }}
-              {...rest}
-              center={center}
-              zoom={zoom}
-            >
-              {children}
-            </GoogleMap>
-          </LoadScript>
-        )}
-      </MapContainer>
+      {isOpen && (
+        <LoadScript googleMapsApiKey={YOUR_API_KEY}>
+          <GoogleMap
+            mapContainerStyle={{
+              width: `${containerWidth}px`,
+              height: `${containerHeight}px`,
+            }}
+            {...rest}
+            center={center}
+            zoom={zoom}
+          >
+            {children}
+          </GoogleMap>
+        </LoadScript>
+      )}
     </>
   );
 }
 
-export const MapContainer = styled.div`
-  width: ${(props) => props.containerWidth};
-  height: ${(props) => props.containerHeight};
-`;
 SmartMap.defaultProps = {
   zoom: 10,
   center: {
@@ -54,8 +44,8 @@ SmartMap.defaultProps = {
   },
   isOpen: true,
   children: null,
-  containerWidth: "400px",
-  containerHeight: "400px",
+  containerWidth: "0",
+  containerHeight: "0",
 };
 
 SmartMap.propTypes = {
