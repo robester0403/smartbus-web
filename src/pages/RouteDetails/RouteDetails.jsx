@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SmartMap from "../../components/SmartMap/SmartMap";
 import { apiRequest } from "../../utils/axios";
 import { currentPositionData } from "../../utils/currentPositionData";
@@ -7,6 +7,10 @@ const HEARTBEAT_ENDPOINT = "/heartbeat";
 const HEARTBEAT_SPEED = 2000;
 
 const RouteDetails = () => {
+  const ref = useRef(null);
+  const [width, setWidth] = useState(400);
+  const [height, setHeight] = useState(400);
+
   const pingHeartBeat = async () => {
     try {
       const position = await currentPositionData();
@@ -38,9 +42,20 @@ const RouteDetails = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(ref.current.offsetWidth);
+      setHeight(ref.current.offsetHeight);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div>
-      <SmartMap />
+    <div style={{ width: "100%", height: "100%" }} ref={ref}>
+      <SmartMap containerHeight={height} containerWidth={width} />
     </div>
   );
 };
